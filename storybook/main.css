@@ -908,7 +908,7 @@ h5,
   position: absolute;
   top: 1.25em;
   right: 1.25em;
-  fill: var(--hds-theme-color-primary-light);
+  fill: var(--hds-theme-color-primary);
 }
 
 .Notification_buttonCloseText__2MwZK {
@@ -929,6 +929,10 @@ h5,
 .Notification_alternative__1BPDv {
   border-color: var(--hds-theme-color-secondary);
   background-color: var(--hds-theme-color-secondary-extra-light);
+}
+
+.Notification_alternative__1BPDv .Notification_buttonClose__PBMa9 {
+  fill: var(--hds-theme-color-secondary);
 }
 
 .Section_section__2aN0g {
