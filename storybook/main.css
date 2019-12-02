@@ -89,7 +89,7 @@ body {
     --hds-brand-color-suomenlinna-light-20
   );
   --hds-theme-color-secondary-dark: var(--hds-brand-color-suomenlinna-dark-50);
-  --hds-theme-color-secondary-heading: var(--hds-ui-color-black);
+  --hds-theme-color-secondary-heading: var(--hds-ui-color-white);
 
   /* tertiary color */
   --hds-theme-color-tertiary: var(--hds-brand-color-copper);
@@ -582,6 +582,8 @@ button {
   --hds-text-xl: 1.5em;
   --hds-text-xxl: 2.25em;
   --hds-text-xxxl: 3.25em;
+
+  --hds-theme-primary-font: "HelsinkiGrotesk";
 }
 
 @media all and (max-width: 768px) {
@@ -608,13 +610,22 @@ button {
   line-height: var(--hds-text-body-line-height);
 }
 
-.helsinki_text-body__tVnNk p {
-  margin: 2em 0;
+.helsinki_text-medium__3lcYl {
+  font-family: "HelsinkiGrotesk";
+  font-family: "HelsinkiGrotesk";
+  font-family: var(--hds-theme-primary-font);
+  font-weight: 500;
 }
 
 .helsinki_text-bold__1OM_D {
-  font-family: var(--hds-theme-primary-font-bold);
+  font-family: "HelsinkiGrotesk";
+  font-family: "HelsinkiGrotesk";
+  font-family: var(--hds-theme-primary-font);
   font-weight: bold;
+}
+
+.helsinki_text-body__tVnNk p {
+  margin: 2em 0;
 }
 
 h1,
@@ -719,7 +730,7 @@ h5,
     --hds-brand-color-suomenlinna-light-20
   );
   --hds-theme-color-tertiary-dark: var(--hds-brand-color-suomenlinna-dark-50);
-  --hds-theme-color-tertiary-heading: var(--hds-ui-color-black);
+  --hds-theme-color-tertiary-heading: var(--hds-ui-color-white);
 }
 
 .ImageWithCard_wrapper__1Gv_S {
