@@ -970,7 +970,7 @@ h5,
 
 .Notification_notification__1QWUO {
   margin: 0.75em 0 1.25em;
-  padding: 1.875em 1.875em 1.25em;
+  padding: 1.875em 1.875em 1.875em;
   border: 0 solid var(--hds-theme-color-primary);
   border-left-width: 0.625em;
   background-color: var(--hds-theme-color-primary-extra-light);
@@ -1043,7 +1043,7 @@ h5,
 
 .DismissableNotification_buttonClose__31LAu {
   position: absolute;
-  top: 0;
+  top: 0.85em;
   right: 0;
   padding: 1.875em;
   fill: var(--hds-theme-color-primary);
@@ -1069,13 +1069,14 @@ h5,
 @media all and (max-width: 768px) {
   .DismissableNotification_buttonClose__31LAu {
     padding: 1.25em;
-    width: 4.25em;
-    height: 4.25em;
+    top: 1.35em;
+    width: 4em;
+    height: 4em;
   }
 
   .DismissableNotification_iconClose__2P-gq {
-    width: 1.125em;
-    height: 1.125em;
+    width: 0.9375em;
+    height: 0.9375em;
   }
 }
 
