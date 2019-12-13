@@ -735,14 +735,61 @@ h5,
 
 .Button_button__2cZ5P {
   display: inline-block;
-  padding: 1.125em 2em;
-  cursor: pointer;
-  -webkit-transition: background-color 0.15s;
-  transition: background-color 0.15s;
+  padding: 0.875em 0.7em;
+  -webkit-transition-property: background-color, border-color;
+  transition-property: background-color, border-color;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 4px solid rgba(0, 0, 0, 0);
+  fill: currentColor;
+  text-align: left;
+  align-content: flex-start;
+}
+
+.Button_button__2cZ5P:focus {
+  background-clip: padding-box;
+}
+
+.Button_button__2cZ5P:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.Button_fullWidth__1WosL {
+  width: 100%;
+}
+
+.Button_fullWidth__1WosL .Button_icon__3rDp9 {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .Button_disabled__nbT6h {
   pointer-events: none;
+}
+
+.Button_label__1ay92 {
+  margin: 0 1.375em;
+}
+
+.Button_icon__3rDp9 {
+  height: 1.5em;
+  width: 1.5em;
+  margin: -0.75em auto;
+}
+
+.Button_iconRight__1g428 {
+  order: 2;
 }
 
 .Button_primary__1pAFz {
@@ -750,12 +797,24 @@ h5,
   color: var(--hds-theme-color-primary-heading);
 }
 
+.Button_primary__1pAFz:after {
+  border-color: var(--hds-theme-color-primary);
+}
+
 .Button_primary__1pAFz.Button_disabled__nbT6h {
   background-color: var(--hds-theme-color-primary-light);
 }
 
+.Button_primary__1pAFz.Button_disabled__nbT6h:after {
+  border-color: var(--hds-theme-color-primary-light);
+}
+
 .Button_primary__1pAFz:hover {
   background-color: var(--hds-theme-color-primary-dark);
+}
+
+.Button_primary__1pAFz:hover:after {
+  border-color: var(--hds-theme-color-primary-dark);
 }
 
 .Button_secondary__39Xzd {
@@ -763,12 +822,24 @@ h5,
   color: var(--hds-theme-color-secondary-heading);
 }
 
+.Button_secondary__39Xzd:after {
+  border-color: var(--hds-theme-color-secondary);
+}
+
 .Button_secondary__39Xzd.Button_disabled__nbT6h {
   background-color: var(--hds-theme-color-secondary-light);
 }
 
+.Button_secondary__39Xzd.Button_disabled__nbT6h:after {
+  border-color: var(--hds-theme-color-secondary-light);
+}
+
 .Button_secondary__39Xzd:hover {
   background-color: var(--hds-theme-color-secondary-dark);
+}
+
+.Button_secondary__39Xzd:hover:after {
+  border-color: var(--hds-theme-color-secondary-dark);
 }
 
 .Button_tertiary__3rtY2 {
@@ -776,20 +847,40 @@ h5,
   color: var(--hds-theme-color-tertiary-heading);
 }
 
+.Button_tertiary__3rtY2:after {
+  border-color: var(--hds-theme-color-tertiary);
+}
+
 .Button_tertiary__3rtY2.Button_disabled__nbT6h {
   background-color: var(--hds-theme-color-tertiary-light);
+}
+
+.Button_tertiary__3rtY2.Button_disabled__nbT6h:after {
+  border-color: var(--hds-theme-color-tertiary-light);
 }
 
 .Button_tertiary__3rtY2:hover {
   background-color: var(--hds-theme-color-tertiary-dark);
 }
 
-.Button_supplementary__3V2td {
-  color: var(--hds-theme-color-primary);
+.Button_tertiary__3rtY2:hover:after {
+  border-color: var(--hds-theme-color-tertiary-dark);
+}
+
+.Button_supplementary__3V2td:after {
+  border-color: currentColor;
+}
+
+.Button_supplementary__3V2td:focus:after {
+  border-width: 4px;
 }
 
 .Button_supplementary__3V2td.Button_disabled__nbT6h {
   color: var(--hds-ui-color-black-30);
+}
+
+.Button_supplementary__3V2td.Button_disabled__nbT6h:after {
+  border: var(--hds-ui-color-black-30);
 }
 
 .Button_supplementary__3V2td:hover {
@@ -797,7 +888,18 @@ h5,
 }
 
 .Button_small__ZySFV {
-  padding: 0.5em 1.5em;
+  padding: 0.25em;
+}
+
+.Button_small__ZySFV .Button_icon__3rDp9 {
+  height: 1em;
+  width: 1em;
+  margin: -0.5em auto;
+}
+
+.Button_small__ZySFV.Button_fullWidth__1WosL .Button_icon__3rDp9 {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .ImageWithCard_wrapper__1Gv_S {
@@ -1370,12 +1472,6 @@ h5,
 
 .TextInput_readOnly__23Swk .TextInput_input__1Ded8:focus {
   border-color: var(--hds-ui-color-black-20);
-}
-
-.WallOfText_wallOfText__2A_c7 {
-  background-color: var(--color-background);
-  overflow-y: auto;
-  padding: 2rem;
 }
 
 @media all and (min-width: 769px) {
