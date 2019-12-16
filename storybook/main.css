@@ -734,7 +734,6 @@ h5,
 }
 
 .Button_button__2cZ5P {
-  display: inline-block;
   padding: 0.875em 0.7em;
   -webkit-transition-property: background-color, border-color;
   transition-property: background-color, border-color;
@@ -748,6 +747,7 @@ h5,
   fill: currentColor;
   text-align: left;
   align-content: flex-start;
+  vertical-align: top;
 }
 
 .Button_button__2cZ5P:focus {
