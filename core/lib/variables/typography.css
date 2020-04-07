@@ -26,7 +26,8 @@
 }
 
 .text-body {
-  font-family: var(--hds-primary-font);
+  font-family: "HelsinkiGrotesk";
+  font-family: var(--hds-theme-primary-font);
   font-size: 1em;
   font-size: var(--hds-text-base-size);
   color: var(--hds-theme-color-body);

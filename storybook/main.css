@@ -605,7 +605,9 @@ button {
 }
 
 .helsinki_text-body__tVnNk {
-  font-family: var(--hds-primary-font);
+  font-family: "HelsinkiGrotesk";
+  font-family: "HelsinkiGrotesk";
+  font-family: var(--hds-theme-primary-font);
   font-size: 1em;
   font-size: 1em;
   font-size: var(--hds-text-base-size);
