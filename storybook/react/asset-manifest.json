@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "./static/css/main.ba964d8f.chunk.css",
-    "main.js": "./main.0427b937fff9da548c12.bundle.js",
+    "main.js": "./main.a31ed810b98bc30e436c.bundle.js",
     "main.css.map": "./static/css/main.ba964d8f.chunk.css.map",
-    "main.js.map": "./main.0427b937fff9da548c12.bundle.js.map",
-    "runtime~main.js": "./runtime~main.0427b937fff9da548c12.bundle.js",
-    "runtime~main.js.map": "./runtime~main.0427b937fff9da548c12.bundle.js.map",
-    "vendors~main.js": "./vendors~main.0427b937fff9da548c12.bundle.js",
-    "vendors~main.js.map": "./vendors~main.0427b937fff9da548c12.bundle.js.map",
+    "main.js.map": "./main.a31ed810b98bc30e436c.bundle.js.map",
+    "runtime~main.js": "./runtime~main.a31ed810b98bc30e436c.bundle.js",
+    "runtime~main.js.map": "./runtime~main.a31ed810b98bc30e436c.bundle.js.map",
+    "vendors~main.js": "./vendors~main.a31ed810b98bc30e436c.bundle.js",
+    "vendors~main.js.map": "./vendors~main.a31ed810b98bc30e436c.bundle.js.map",
     "iframe.html": "./iframe.html",
-    "precache-manifest.29331d56a0bfa755f54034cdb31477b1.js": "./precache-manifest.29331d56a0bfa755f54034cdb31477b1.js",
+    "precache-manifest.a6e5771b7b9db4c8b4a08712a03a6c56.js": "./precache-manifest.a6e5771b7b9db4c8b4a08712a03a6c56.js",
     "service-worker.js": "./service-worker.js",
     "static/media/placeholder_1920x1080.jpg": "./static/media/placeholder_1920x1080.4c706998.jpg",
-    "vendors~main.0427b937fff9da548c12.bundle.js.LICENSE.txt": "./vendors~main.0427b937fff9da548c12.bundle.js.LICENSE.txt"
+    "vendors~main.a31ed810b98bc30e436c.bundle.js.LICENSE.txt": "./vendors~main.a31ed810b98bc30e436c.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.0427b937fff9da548c12.bundle.js",
-    "vendors~main.0427b937fff9da548c12.bundle.js",
+    "runtime~main.a31ed810b98bc30e436c.bundle.js",
+    "vendors~main.a31ed810b98bc30e436c.bundle.js",
     "static/css/main.ba964d8f.chunk.css",
-    "main.0427b937fff9da548c12.bundle.js"
+    "main.a31ed810b98bc30e436c.bundle.js"
   ]
 }
