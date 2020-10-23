@@ -2,8 +2,8 @@
   "compilerOptions": {
     "module": "ES2015",
     "moduleResolution": "Node",
-    "target": "es5",
-    "lib": ["dom", "es2015"],
+    "target": "es6",
+    "lib": ["es6", "dom", "dom.iterable"],
     "outDir": "lib",
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -13,7 +13,8 @@
     "esModuleInterop": true,
     "jsx": "react"
   },
-  "include": ["src", ".storybook"],
+  "include": ["src"],
+  "exclude": ["**/*.test.tsx", "**/*.stories.tsx"],
   "compileOnSave": false,
   "buildOnSave": false
 }

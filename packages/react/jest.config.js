@@ -82,6 +82,7 @@ module.exports = {
   moduleNameMapper: {
     // return a mock css module
     '\\.(css|less|scss|sss|styl)$': 'identity-obj-proxy',
+    'hds-core': 'identity-obj-proxy',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -150,7 +151,7 @@ module.exports = {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  testPathIgnorePatterns: ['.templates/', 'lib/', 'lib-esm/'],
+  testPathIgnorePatterns: ['.templates/', 'lib/'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -171,9 +172,7 @@ module.exports = {
   // transform: null,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  transformIgnorePatterns: ['/node_modules/(?!@babel/runtime)'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

@@ -4,13 +4,14 @@ import { IconProps } from '../Icon.interface';
 import classNames from '../../utils/classNames';
 import styles from '../Icon.module.css';
 
-const IconAngleUp: React.FC<IconProps> = ({ size = 's', className = '', style = {} }: IconProps) => (
+export const IconAngleUp = ({ size = 's', className = '', style = {}, ...rest }: IconProps) => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
     className={classNames(styles.icon, styles[size], className)}
     style={style}
     viewBox="0 0 24 24"
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
+    {...rest}
+    role="img"
   >
     <g fill="none" fillRule="evenodd">
       <path d="M0 24h24V0H0z" />
@@ -18,5 +19,3 @@ const IconAngleUp: React.FC<IconProps> = ({ size = 's', className = '', style = 
     </g>
   </svg>
 );
-
-export default IconAngleUp;

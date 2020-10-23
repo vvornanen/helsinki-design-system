@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
 import uniqueId from 'lodash.uniqueid';
 
+// import core base styles
+import 'hds-core';
 import classNames from '../../utils/classNames';
 import styles from './Koros.module.css';
 
+export type KorosType = 'basic' | 'beat' | 'pulse' | 'storm' | 'wave';
+
 export type KorosProps = {
+  /**
+   * Whether the component should be flipped horizontally
+   */
   flipHorizontal?: boolean;
-  type?: 'basic' | 'beat' | 'pulse' | 'storm' | 'wave';
+  /**
+   * Koros type
+   */
+  type?: KorosType;
+  /**
+   * Additional class names to apply to component
+   */
   className?: string;
 };
 
@@ -26,7 +39,7 @@ const getSVG = (type: string, patternName: string): React.SVGProps<SVGElement> =
   };
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="85">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="100%" height="85">
       <defs>
         <pattern id={`${patternName}`} x="0" y="0" width="106" height="85" patternUnits="userSpaceOnUse">
           {patterns[type]}
@@ -37,7 +50,7 @@ const getSVG = (type: string, patternName: string): React.SVGProps<SVGElement> =
   );
 };
 
-const Koros: React.FC<KorosProps> = ({ flipHorizontal = false, type = 'basic', className = '' }: KorosProps) => {
+export const Koros = ({ flipHorizontal = false, type = 'basic', className = '' }: KorosProps) => {
   const patternName = `koros_${type}`;
   const [id] = useState(uniqueId(`${patternName}-`));
 
@@ -47,5 +60,3 @@ const Koros: React.FC<KorosProps> = ({ flipHorizontal = false, type = 'basic', c
     </div>
   );
 };
-
-export default Koros;

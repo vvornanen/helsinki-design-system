@@ -16,9 +16,8 @@ const getPath = (path = '') => {
  * Helper function for building the platform configuration
  * @param output      Location (without extension) to build the file, will be appended to the buildPath
  * @param buildPath   Base path to build the files
- * @param filter      A function, string or object used to filter the properties that will be included in the file. (https://amzn.github.io/style-dictionary/#/config?id=configjson)
  */
-const getPlatformConfig = (output, buildPath, filter) =>
+const getPlatformConfig = (output, buildPath) =>
   PLATFORMS.reduce(
     (acc, platform) => ({
       ...acc,
@@ -32,21 +31,12 @@ const getPlatformConfig = (output, buildPath, filter) =>
             options: {
               showFileHeader: false,
             },
-            filter,
           },
         ],
       },
     }),
     {},
   );
-
-// register component token filter
-dictionary.registerFilter({
-  name: 'isComponentToken',
-  matcher(prop) {
-    return !prop.primary;
-  },
-});
 
 // build the token files
 Object.values({
@@ -92,6 +82,24 @@ Object.values({
     platforms: getPlatformConfig('layout', 'spacing'),
   }),
 
+  /* BREAKPOINTS */
+
+  // all breakpoint tokens
+  allBreakpoints: dictionary.extend({
+    source: ['tokens/breakpoint/*.json'],
+    platforms: getPlatformConfig('all', 'breakpoint'),
+  }),
+  // breakpoints
+  breakpoint: dictionary.extend({
+    source: ['tokens/breakpoint/breakpoint.json'],
+    platforms: getPlatformConfig('breakpoint', 'breakpoint'),
+  }),
+  // container widths
+  containerWidth: dictionary.extend({
+    source: ['tokens/breakpoint/container-width.json'],
+    platforms: getPlatformConfig('container-width', 'breakpoint'),
+  }),
+
   /* TYPOGRAPHY */
 
   // all typography tokens
@@ -110,33 +118,5 @@ Object.values({
   lineHeight: dictionary.extend({
     source: ['tokens/typography/line-height.json'],
     platforms: getPlatformConfig('line-height', 'typography'),
-  }),
-
-  /* COMPONENT */
-
-  // all component tokens
-  allComponents: dictionary.extend({
-    source: ['tokens/color/brand/*.json', 'tokens/color/ui/*.json', 'tokens/color/component/**/*.json'],
-    platforms: getPlatformConfig('all', 'color/component', 'isComponentToken'),
-  }),
-  // button
-  button: dictionary.extend({
-    source: ['tokens/color/brand/*.json', 'tokens/color/ui/*.json', 'tokens/color/component/button/*.json'],
-    platforms: getPlatformConfig('button', 'color/component', 'isComponentToken'),
-  }),
-  // text-input
-  textInput: dictionary.extend({
-    source: ['tokens/color/brand/*.json', 'tokens/color/ui/*.json', 'tokens/color/component/text-input/*.json'],
-    platforms: getPlatformConfig('text-input', 'color/component', 'isComponentToken'),
-  }),
-  // radio-button
-  radioButton: dictionary.extend({
-    source: ['tokens/color/brand/*.json', 'tokens/color/ui/*.json', 'tokens/color/component/radio-button/*.json'],
-    platforms: getPlatformConfig('radio-button', 'color/component', 'isComponentToken'),
-  }),
-  // checkbox
-  checkbox: dictionary.extend({
-    source: ['tokens/color/brand/*.json', 'tokens/color/ui/*.json', 'tokens/color/component/checkbox/*.json'],
-    platforms: getPlatformConfig('checkbox', 'color/component', 'isComponentToken'),
   }),
 }).forEach((item) => item.buildAllPlatforms());

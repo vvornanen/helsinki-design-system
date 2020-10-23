@@ -1,57 +1,65 @@
 ---
-name: Icons
+name: Icon
 menu: Components
 route: /components/icons
 ---
 
 import { Playground } from "docz";
-import { IconFaceSmile } from "hds-react";
+import { IconFaceSmile, StatusLabel } from "hds-react";
 
 import LargeParagraph from "../../src/components/LargeParagraph";
+import Link from "../../src/components/Link";
 
-# Icons
+# Icon
+
+<StatusLabel type="info">Stable</StatusLabel>
 
 <LargeParagraph>
-  TODO
+  Icons are used for providing visual cues and highlighting actions, denoting types and classes of information, and giving additional meaning to content.
 </LargeParagraph>
 
-## Principles
+See the [icon library documentation](/visual-assets/icons "HDS Icons") for more information and full list of HDS icons.
 
-> TODO
+## Principles
+- **An icon should always serve a distinct, easily understandable purpose.** Icons should not be used solely for decoration.
+- **An icon should preferably be accompanied with a text label to give context for interpretation.** The meaning of icons by them self can be ambiguous and change depending on the context. Label can be omitted only if the meaning of the icon is commonly established, or can be easily interpreted from the context, e.g. volume buttons in video playback.
+- **An icon and its related content or label should have the same meaning.** Conflicting and ambivalent interpretations can have a negative effect on usability and accessibility.
 
 ## Accessibility
-
-> TODO
+- For icons that do not have a visual text label but are important must be given a text alternative using the WAI-ARIA definition _aria-label_ or _aria-labelledby_. See <Link href="https://www.w3.org/TR/WCAG21/#text-alternatives" external>WCAG 2.1 Text Alternatives guideline</Link> for more information.
+- If the icon has a visual text label associated with it, the icon can be hidden from assistive technologies with `aria-hidden="true"`. This prevents screenreaders repeating the same information twice (visual text followed by the icon description).
+- If the icon is only decorative, it should be always hidden from assistive technologies with `aria-hidden="true"`.
+- The colour contrast between the icon and its background must comply with <Link href="https://www.w3.org/TR/WCAG21/#contrast-minimum" external>AA Level contrast ratios</Link>.
 
 ## Usage
 
 ### Default
 
 <Playground>
-  <IconFaceSmile />
+  <IconFaceSmile aria-hidden="true" />
 </Playground>
 
-##### Core:
+#### Core code example:
 ```html
-<i aria-hidden="true" class="hds-icon hds-icon--face-smile"></i>
+<i class="hds-icon hds-icon--face-smile" aria-hidden="true"></i>
 ```
 
-##### React:
+#### React code example:
 ```tsx
-<IconFaceSmile />
+<IconFaceSmile aria-hidden="true" />
 ```
 
 ### Icon sizes
 
 <Playground>
-  <IconFaceSmile size="xs" />
-  <IconFaceSmile size="s" />
-  <IconFaceSmile size="m" />
-  <IconFaceSmile size="l" />
-  <IconFaceSmile size="xl" />
+  <IconFaceSmile size="xs" aria-hidden="true" />
+  <IconFaceSmile size="s" aria-hidden="true" />
+  <IconFaceSmile size="m" aria-hidden="true" />
+  <IconFaceSmile size="l" aria-hidden="true" />
+  <IconFaceSmile size="xl" aria-hidden="true" />
 </Playground>
 
-##### Core:
+#### Core code example:
 ```html
 <i class="hds-icon hds-icon--face-smile hds-icon--size-xs" aria-hidden="true"></i>
 <i class="hds-icon hds-icon--face-smile hds-icon--size-s" aria-hidden="true"></i>
@@ -60,25 +68,22 @@ import LargeParagraph from "../../src/components/LargeParagraph";
 <i class="hds-icon hds-icon--face-smile hds-icon--size-xl" aria-hidden="true"></i>
 ```
 
-##### React:
+#### React code example:
 ```tsx
-<IconFaceSmile size="xs" />
-<IconFaceSmile size="s" />
-<IconFaceSmile size="m" />
-<IconFaceSmile size="l" />
-<IconFaceSmile size="xl" />
+<IconFaceSmile size="xs" aria-hidden="true" />
+<IconFaceSmile size="s" aria-hidden="true" />
+<IconFaceSmile size="m" aria-hidden="true" />
+<IconFaceSmile size="l" aria-hidden="true" />
+<IconFaceSmile size="xl" aria-hidden="true" />
 ```
 
 ## Demos & API
 
 ### Core
 
-[Icons in hds-core](/storybook/core/?path=/story/icons--discord)
+[Icons in hds-core](/storybook/core/?path=/story/icons-icons--discord)
 
 ### React
 
-[Icons in hds-react](/storybook/react/?path=/story/components-icons-some--icondiscord)
+[Icons in hds-react](/storybook/react/?path=/story/icons-some--icondiscord)
 
-## Tokens
-
-_No tokens._

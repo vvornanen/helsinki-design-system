@@ -1,12 +1,14 @@
 import './text-input.css';
 import '../../icons/icon.css';
 
-const getLabel = (id = 'input', label = 'Label text') =>
-  `<label for="${id}" class="hds-text-input__label">${label}</label>`;
+const getLabel = (id = 'input', required = false, label = 'Label text') =>
+  `<label for="${id}" class="hds-text-input__label">${label}${
+    required ? '<span class="hds-text-input__required">*</span>' : ''
+  }</label>`;
 const getHelperText = (text = 'Assistive text') => `<span class="hds-text-input__helper-text">${text}</span>`;
 
 export default {
-  title: 'Text input',
+  title: 'Components/Text input',
   decorators: [(storyFn) => `<div style="max-width: 400px">${storyFn()}</div>`],
 };
 
@@ -40,10 +42,7 @@ export const ReadOnly = () => `
       ${getHelperText()}
     </div>
 `;
-
-ReadOnly.story = {
-  name: 'Read-only',
-};
+ReadOnly.storyName = 'Read-only';
 
 export const Disabled = () => `
     <div class="hds-text-input">
@@ -73,5 +72,21 @@ export const Invalid = () => `
        />
      </div>
      ${getHelperText('Error text')}
+    </div>
+`;
+
+export const Required = () => `
+   <div class="hds-text-input">
+     ${getLabel('input5', true)}
+     <div class="hds-text-input__input-wrapper">
+       <input
+         id="input5"
+         class="hds-text-input__input"
+         type="text"
+         placeholder="Placeholder"
+         required
+       />
+     </div>
+     ${getHelperText()}
     </div>
 `;

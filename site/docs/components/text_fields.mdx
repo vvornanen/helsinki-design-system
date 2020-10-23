@@ -5,7 +5,7 @@ route: /components/text-field
 ---
 
 import { Playground } from "docz";
-import { TextArea, TextInput } from "hds-react";
+import { TextArea, TextInput, StatusLabel } from "hds-react";
 
 import ColorBox from "../../src/components/ColorBox";
 import LargeParagraph from "../../src/components/LargeParagraph";
@@ -13,12 +13,14 @@ import Text from "../../src/components/Text";
 
 # Text fields
 
+<StatusLabel type="info">Stable</StatusLabel>
+
 <LargeParagraph>
   A text field is an input field that the user can interact with and input content and data. The user can also be provided with helper text if needed. Text inputs are used for shorter information while Text areas can be used for multiline answers.
 </LargeParagraph>
 
 ## Principles
-- **Label should be always provided with text fields.** Only exception to this is the search field which can be identified from the magnifying glass icon.
+- **A label should always be provided with a text field.** Only exception to this is the search field which can be identified from the magnifying glass icon.
 - Use a text input when a single line of text is expected. For multiline inputs, use a text area.
 - Allow the text input to reflect the length of the content you expect the user to enter.
 - If possible, add programmatic assistance. Detect and pre-fill inputs to reduce errors and save time. Use sentence-case for default values, detected values, and auto-completion text.
@@ -61,15 +63,16 @@ Text input serves in most use cases when the user needs to enter information. Te
   />
 </Playground>
 
-##### Core:
+#### Core code example:
 ```html
 <!-- Enabled  -->
 <div class="hds-text-input">
   <label for="input" class="hds-text-input__label">
     Label
+    <span class="hds-text-input__required">*</span>
   </label>
   <div class="hds-text-input__input-wrapper">
-    <input id="input" class="hds-text-input__input" type="text" placeholder="Placeholder" />
+    <input id="input" class="hds-text-input__input" type="text" placeholder="Placeholder" required />
   </div>
   <span class="hds-text-input__helper-text">Assistive text</span>
 </div>
@@ -97,7 +100,7 @@ Text input serves in most use cases when the user needs to enter information. Te
 </div>
 ```
 
-##### React:
+#### React code example:
 ```tsx
 /* Enabled */
 <TextInput
@@ -156,15 +159,16 @@ Text area is meant for situations where inputted text is multiline or contains m
 />
 </Playground>
 
-##### Core:
+#### Core code example:
 ```html
 <!-- Enabled  -->
 <div class="hds-text-input">
   <label for="textarea" class="hds-text-input__label">
     Label
+    <span class="hds-text-input__required">*</span>
   </label>
   <div class="hds-text-input__input-wrapper">
-    <textarea id="textarea" class="hds-text-input__input" placeholder="Placeholder"></textarea>
+    <textarea id="textarea" class="hds-text-input__input" placeholder="Placeholder" required></textarea>
   </div>
   <span class="hds-text-input__helper-text">Assistive text</span>
 </div>
@@ -196,7 +200,7 @@ Text area is meant for situations where inputted text is multiline or contains m
 </div>
 ```
 
-##### React:
+#### React code example:
 ```tsx
 /* Enabled */
 <TextArea
@@ -239,7 +243,7 @@ Read-only text input is used to indicate an input among other inputs that cannot
   />
 </Playground>
 
-##### Core:
+#### Core code example:
 ```html
 <div class="hds-text-input">
   <label for="input" class="hds-text-input__label">
@@ -252,7 +256,7 @@ Read-only text input is used to indicate an input among other inputs that cannot
 </div>
 ```
 
-##### React:
+#### React code example:
 ```tsx
 <TextInput
   id="textarea"
@@ -289,7 +293,7 @@ Both text input and text area can be provided with additional tooltip. Tooltip i
   />
 </Playground>
 
-##### React:
+#### React code example:
 ```tsx
 /* Text input */
 <TextInput
@@ -314,9 +318,9 @@ Both text input and text area can be provided with additional tooltip. Tooltip i
 
 ### Core
 
-[Text inputs in hds-core](/storybook/core/?path=/story/text-input--default)
+[Text inputs in hds-core](/storybook/core/?path=/story/components-text-input--default)
 
-[Text areas in hds-core](/storybook/core/?path=/story/textarea--default)
+[Text areas in hds-core](/storybook/core/?path=/story/components-textarea--default)
 
 ### React
 
@@ -327,35 +331,3 @@ Both text input and text area can be provided with additional tooltip. Tooltip i
 [Text areas in hds-react](/storybook/react/?path=/story/components-textarea--default)
 
 [TextArea API](/storybook/react/?path=/docs/components-textarea--default)
-
-## Tokens
-
-```css
-/* CSS */
-@import "hds-design-tokens/lib/color/component/text-input.css";
-/* SCSS */
-@import "hds-design-tokens/lib/color/component/text-input.scss";
-```
-```js
-// JS
-import 'hds-design-tokens/lib/color/component/text-input.css';
-```
-
-CSS                                      | SASS                                    | Value   | Example
----------------------------------------- | --------------------------------------- | ------- | ------------------------------------------------------------------ |
---color-background-text-input-default    | $color-background-text-input-default    | #ffffff | <ColorBox color="var(--color-background-text-input-default)" />    |
---color-background-text-input-disabled   | $color-background-text-input-disabled   | #e5e5e5 | <ColorBox color="var(--color-background-text-input-disabled)" />   |
---color-border-text-input-default        | $color-border-text-input-default        | #808080 | <ColorBox color="var(--color-border-text-input-default)" />        |
---color-border-text-input-hover          | $color-border-text-input-hover          | #1a1a1a | <ColorBox color="var(--color-border-text-input-hover)" />          |
---color-border-text-input-focus          | $color-border-text-input-focus          | #1a1a1a | <ColorBox color="var(--color-border-text-input-focus)" />          |
---color-border-text-input-invalid        | $color-border-text-input-invalid        | #b01038 | <ColorBox color="var(--color-border-text-input-invalid)" />        |
---color-border-text-input-disabled       | $color-border-text-input-disabled       | #e5e5e5 | <ColorBox color="var(--color-border-text-input-disabled)" />       |
---color-focus-outline-text-input-default | $color-focus-outline-text-input-default | #0072c6 | <ColorBox color="var(--color-focus-outline-text-input-default)" /> |
---color-helper-text-input-default        | $color-helper-text-input-default        | #666666 | <Text color="var(--color-helper-text-input-default)" />        |
---color-helper-text-input-invalid        | $color-helper-text-input-invalid        | #b01038 | <Text color="var(--color-helper-text-input-invalid)" />        |
---color-icon-text-input-invalid          | $color-icon-text-input-invalid          | #b01038 | <ColorBox color="var(--color-icon-text-input-invalid)" />          |
---color-input-text-input-default         | $color-input-text-input-default         | #1a1a1a | <Text color="var(--color-input-text-input-default)" />         |
---color-input-text-input-disabled        | $color-input-text-input-disabled        | #999898 | <Text color="var(--color-input-text-input-disabled)" />        |
---color-label-text-input-default         | $color-label-text-input-default         | #1a1a1a | <Text color="var(--color-label-text-input-default)" />         |
---color-label-text-input-invalid         | $color-label-text-input-invalid         | #1a1a1a | <Text color="var(--color-label-text-input-invalid)" />         |
---color-placeholder-text-input-default   | $color-placeholder-text-input-default   | #666666 | <Text color="var(--color-placeholder-text-input-default)" />   |

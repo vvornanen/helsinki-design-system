@@ -23,9 +23,13 @@ const menu = [
   },
   {
     name: 'About',
-    menu: ['What is new', 'Roadmap', 'Resources', 'Support', 'Accessibility statement'],
+    menu: ['What is new', 'Roadmap', 'Support', 'Accessibility statement'],
   },
-  'Contributing',
+  {
+    name: 'Contributing',
+    menu: ['Before contributing', 'Design', 'Implementation', 'Documentation'],
+  },
+  'Resources',
 ];
 
 export default {

@@ -2,19 +2,22 @@
 
 exports[`<Notification /> spec renders the component 1`] = `
 <DocumentFragment>
-  <div
-    class="notification notification"
+  <section
+    aria-atomic="true"
+    aria-label="Notification"
+    class="inline notification default info"
   >
     <div
-      class="label"
+      class="content"
     >
-      <span
-        aria-hidden="true"
-        class="icon"
+      <div
+        aria-level="2"
+        class="label"
+        role="heading"
       >
         <svg
-          aria-hidden="true"
-          class="icon s iconInfo"
+          class="icon s icon"
+          role="img"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -31,18 +34,14 @@ exports[`<Notification /> spec renders the component 1`] = `
             />
           </g>
         </svg>
-      </span>
-      <span
-        class="labelText"
+        This is the label text
+      </div>
+      <div
+        class="body"
       >
-        This is the tool tip label text
-      </span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+      </div>
     </div>
-    <div
-      class="bodyText"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-    </div>
-  </div>
+  </section>
 </DocumentFragment>
 `;

@@ -4,12 +4,13 @@ import { IconProps } from '../Icon.interface';
 import classNames from '../../utils/classNames';
 import styles from '../Icon.module.css';
 
-const IconVolumeMute: React.FC<IconProps> = ({ size = 's', className = '', style = {} }: IconProps) => (
+export const IconVolumeMute = ({ size = 's', className = '', style = {}, ...rest }: IconProps) => (
   <svg
     className={classNames(styles.icon, styles[size], className)}
     style={style}
     viewBox="0 0 24 24"
-    aria-hidden="true"
+    {...rest}
+    role="img"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g fill="none" fillRule="evenodd">
@@ -21,5 +22,3 @@ const IconVolumeMute: React.FC<IconProps> = ({ size = 's', className = '', style
     </g>
   </svg>
 );
-
-export default IconVolumeMute;
