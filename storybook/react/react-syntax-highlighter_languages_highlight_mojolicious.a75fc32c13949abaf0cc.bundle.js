@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[104],{1894:function(module,exports){module.exports=function(hljs){return{subLanguage:"xml",contains:[{className:"meta",begin:"^__(END|DATA)__$"},{begin:"^\\s*%{1,2}={0,2}",end:"$",subLanguage:"perl"},{begin:"<%{1,2}={0,2}",end:"={0,1}%>",subLanguage:"perl",excludeBegin:!0,excludeEnd:!0}]}}}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_highlight_mojolicious.a75fc32c13949abaf0cc.bundle.js.map
