@@ -1,3 +1,4 @@
+import { useFormik } from 'formik';
 import React, { useRef, useState } from 'react';
 
 import { Button } from '../button/Button';
@@ -56,6 +57,84 @@ export const Default = (args) => {
             id="item-description"
             label="Item description"
             placeholder="E.g. Item 1 is the first item of the system."
+            required
+          />
+        </Dialog.Content>
+        <Dialog.ActionButtons>
+          <Button
+            onClick={() => {
+              // Add operations here
+              close();
+            }}
+          >
+            Add item
+          </Button>
+          <Button onClick={close} variant="secondary">
+            Cancel
+          </Button>
+        </Dialog.ActionButtons>
+      </Dialog>
+    </>
+  );
+};
+
+export const WithFormik = (args) => {
+  const openButtonRef = useRef(null);
+  const [open, setOpen] = useState<boolean>(false);
+  const close = () => setOpen(false);
+  const titleId = 'with-formik-dialog-title';
+  const descriptionId = 'with-formik-dialog-content';
+
+  const formik = useFormik({
+    // Set initial field values
+    initialValues: {
+      description: '',
+      name: '',
+    },
+    onSubmit: (values) => {
+      console.log('Form submitted:', values);
+    },
+  });
+
+  return (
+    <>
+      <Button ref={openButtonRef} onClick={() => setOpen(true)}>
+        Open Dialog
+      </Button>
+      <Dialog
+        id={args.id}
+        aria-labelledby={titleId}
+        aria-describedby={descriptionId}
+        isOpen={open}
+        focusAfterCloseRef={openButtonRef}
+        close={close}
+        closeButtonLabelText="Close"
+      >
+        <Dialog.Header id={titleId} title="Add new item" iconLeft={<IconPlusCircle aria-hidden="true" />} />
+        <Dialog.Content>
+          <p id={descriptionId} className="text-body">
+            Add a new item by filling the information below. All fields are mandatory.
+          </p>
+          <TextInput
+            id="name"
+            name="name"
+            label="Item name"
+            placeholder="E.g. Item 1"
+            helperText="Item's name must be unique."
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
+            required
+          />
+          <br />
+          <TextArea
+            id="description"
+            name="description"
+            label="Item description"
+            placeholder="E.g. Item 1 is the first item of the system."
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.description}
             required
           />
         </Dialog.Content>
