@@ -1,0 +1,45 @@
+.table {
+  --content-background-color: var(--color-white);
+  --header-background-color: var(--color-black-90);
+  composes: hds-table from 'hds-core/lib/components/table/table.css';
+  border: solid 2px var(--color-black-90);
+
+  & th {
+    color: var(--color-white);
+  }
+
+  .checkbox {
+    label {
+      padding-left: 24px;
+    }
+  }
+
+}
+
+.container {
+  composes: hds-table-container from 'hds-core/lib/components/table/table.css';
+  height: inherit;
+}
+
+.headerRow {
+  composes: hds-table__header-row from 'hds-core/lib/components/table/table.css';
+}
+
+.content {
+  composes: hds-table__content from 'hds-core/lib/components/table/table.css';
+  & tr td {
+    border-bottom: none;
+  }
+}
+
+.textAlignRight {
+  composes: hds-table--text-align-right from 'hds-core/lib/components/table/table.css';
+}
+
+.checkboxHeader {
+  border-bottom: 1px solid var(--color-black-20);
+}
+
+.groupDivider {
+  border-bottom: solid 1px var(--color-black-90);
+}
