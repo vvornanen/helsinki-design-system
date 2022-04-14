@@ -70,7 +70,7 @@ export const Link = ({
   openInExternalDomainAriaLabel,
   openInNewTabAriaLabel,
   style = {},
-  size = 'S',
+  size = 'M',
   ...rest
 }: LinkProps) => {
   const composeAriaLabel = () => {
